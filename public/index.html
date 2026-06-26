@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collab — write together, live</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .top-right{display:flex;align-items:center;gap:.7rem;}
+    #user-area{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:#5A5B6A;}
+    #user-area .logout{background:#fff;border:1px solid #ECEDF3;border-radius:999px;padding:.35rem .8rem;
+      font-size:.8rem;font-weight:600;color:#15151E;cursor:pointer;font-family:inherit;}
+    #user-area .logout:hover{border-color:#C9CAD8;}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span> Collab</div>
+    <div class="top-right">
+      <span class="live-chip">Live now</span>
+      <span id="user-area"></span>
+    </div>
+  </header>
+
+  <main class="landing">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Real-time collaborative editor</p>
+        <h1>One page.<br />Everyone on it.</h1>
+        <p class="subtitle">Open a document, share the link, and watch everyone&rsquo;s edits land as they type &mdash; no refresh, no taking turns.</p>
+        <div class="actions">
+          <button id="new-doc-btn" class="primary-btn">New document</button>
+          <div class="open-row">
+            <input id="doc-name" type="text" placeholder="Open by name — e.g. team-notes" />
+            <button id="open-btn" class="ghost-btn">Open</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-demo">
+        <div class="demo-card">
+          <div class="demo-top">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="presence">
+              <span class="ava a1">M</span>
+              <span class="ava a2">K</span>
+              <span class="ava a3">A</span>
+            </div>
+          </div>
+          <div class="demo-page">
+            <p class="demo-title">Q3 Launch Plan</p>
+            <p class="type-line">Ship the collaborative editor by Friday.</p>
+            <div class="muted-line"></div>
+            <div class="muted-line short"></div>
+            <span class="cursor c1"><span class="tag">Mira</span><span class="caret"></span></span>
+            <span class="cursor c2"><span class="tag">Kabir</span><span class="caret"></span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent">
+      <h2>Recent documents</h2>
+      <ul id="recent-list"><li class="muted">Loading…</li></ul>
+    </section>
+  </main>
+
+  <footer class="foot">Built with Node.js, WebSockets &amp; MongoDB.</footer>
+
+  <script src="/js/home.js"></script>
+</body>
+</html>

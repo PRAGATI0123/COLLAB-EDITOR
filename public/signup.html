@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create account — Collab</title>
+<link rel="stylesheet" href="/css/style.css" />
+<style>
+  .auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem;}
+  .auth-card{width:100%;max-width:380px;background:#fff;border:1px solid #ECEDF3;border-radius:18px;
+    box-shadow:0 1px 2px rgba(20,20,40,.04),0 12px 32px rgba(20,20,50,.10);padding:2rem;}
+  .auth-card .brand{display:flex;align-items:center;gap:.55rem;font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.1rem;margin-bottom:1.4rem;}
+  .auth-card .brand-dot{width:13px;height:13px;border-radius:4px;
+    background:conic-gradient(from 210deg,#FF5D8F,#8B5CF6,#4F7CFF,#06B6D4,#F5A524,#FF5D8F);}
+  .auth-card h1{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;letter-spacing:-.02em;margin:0 0 1.2rem;}
+  .auth-card label{display:block;font-size:.85rem;font-weight:600;color:#5A5B6A;margin:0 0 .35rem;}
+  .auth-card input{width:100%;font-family:inherit;font-size:1rem;padding:.7rem .85rem;border:1px solid #ECEDF3;
+    border-radius:10px;margin-bottom:.4rem;box-sizing:border-box;}
+  .auth-card input:focus{outline:none;border-color:#4F46E5;box-shadow:0 0 0 4px rgba(79,70,229,.14);}
+  .hint{font-size:.78rem;color:#9A9BAB;margin:0 0 1rem;}
+  .auth-card button{width:100%;font-family:inherit;font-weight:600;font-size:1rem;color:#fff;background:#4F46E5;
+    border:none;padding:.8rem;border-radius:10px;cursor:pointer;}
+  .auth-card button:hover{background:#4338CA;}
+  .auth-card button:disabled{opacity:.6;cursor:default;}
+  .auth-msg{color:#DC2626;font-size:.85rem;min-height:1.2rem;margin-bottom:.6rem;}
+  .auth-alt{margin-top:1.1rem;font-size:.9rem;color:#5A5B6A;text-align:center;}
+  .auth-alt a{color:#4F46E5;font-weight:600;text-decoration:none;}
+</style>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="brand"><span class="brand-dot"></span> Collab</div>
+      <h1>Create your account</h1>
+      <div class="auth-msg" id="msg"></div>
+      <form id="auth-form" data-endpoint="/api/signup">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" required />
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="new-password" required />
+        <p class="hint">At least 8 characters.</p>
+        <button type="submit">Create account</button>
+      </form>
+      <p class="auth-alt">Already have an account? <a href="/login">Log in</a></p>
+    </div>
+  </div>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "collab-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "yjs": "node yjs-server.mjs",
+    "build": "esbuild src/editor.js --bundle --format=iife --outfile=public/js/editor.bundle.js",
+    "build:watch": "esbuild src/editor.js --bundle --format=iife --outfile=public/js/editor.bundle.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@y/websocket-server": "^0.1.5",
+    "bcryptjs": "^3.0.3",
+    "connect-mongo": "^6.0.0",
+    "express-session": "^1.19.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.4.0",
+    "quill": "^2.0.2",
+    "quill-cursors": "^4.3.0",
+    "ws": "^8.21.0",
+    "y-mongodb-provider": "^0.2.1",
+    "y-quill": "^1.0.0",
+    "y-websocket": "^3.0.0",
+    "yjs": "^13.6.31"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}
